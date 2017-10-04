@@ -1,0 +1,793 @@
+/* Presets */
+* {
+    box-sizing: border-box;
+}
+body{
+    font-size: 10px;
+    margin: 0;
+    /*font-family: 'Patrick Hand SC', cursive;*/
+    /*font-family: 'Raleway', sans-serif;*/
+    font-family: 'Comfortaa', cursive;
+    background-color: rgba(226, 226, 226, 0.15) ;
+}
+
+img{
+    display: block;
+}
+
+ul, ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+/* Fin de los presets */
+
+/* Header */
+
+.main-header{
+  position: relative;
+  background-color: #3597b1;
+  padding-bottom: 15px;
+}
+
+.logo{
+  font-family: 'Audiowide', cursive;
+  color: white;
+  font-size: 1.5em;
+  margin-top: 0;
+  position: relative;
+  top: 10px;
+  left: 5px;
+  width: 10px;
+}
+
+
+
+.main-nav{
+    width: 100vw;
+    height: 0vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #3597b1;
+    overflow: hidden;
+    transition: 600ms;
+}
+
+.main-nav a{
+    text-align: center;
+    display: block;
+    color: white;
+    font-size: 1.6em;
+    padding: 20px 0;
+    text-transform: uppercase;
+}
+
+.toggle-nav{
+    display: block;
+    width: 40px;
+    background-color: #0088eb;
+    color: white;
+    padding: 9px 0;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 0vh;
+    right: 0;
+}
+
+/*icono buscar*/
+.ion-ios-search-strong{
+    position: relative;
+    top: 0.5vh;
+}
+
+/*no se muestra nada hasta abrir el menu*/
+#abre-nav{
+    display: none;
+}
+
+/*cuando clickeo el menu se abre*/
+#abre-nav:checked ~ .main-nav{
+    height: 230px;
+}
+
+/*icono foco*/
+.ion-ios-lightbulb-outline{
+    position: relative;
+    top: 0.5vh;
+}
+
+/*Input buscar*/
+
+.toogle-search{
+    display: block;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    background-color: #0088eb;
+    padding: 9px;
+}
+
+header form .buscador{
+  display: none;
+}
+
+header form .ion-checkmark-circled{
+  display: none;
+}
+
+.mobileform .ion-checkmark-circled{
+  display: inline-block;
+  position: absolute;
+  top: 17px;
+}
+.ion-checkmark-circled{
+  display: inline-block;
+  color: white;
+}
+
+/*el div que contiene el input buscar*/
+.div-buscar{
+    width: 100vw;
+    height: 0vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #3597b1;
+    overflow: hidden;
+    transition: 600ms;
+}
+
+.div-buscar .buscador{
+  display: block;
+}
+
+/*opciones(foco)*/
+.toogle-options{
+    display: block;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    right: 60px;
+    top: 0;
+    background-color: #0088eb;
+    padding: 9px 12px 9px 12px;
+}
+
+/*div que contiene las opciones*/
+.div-options{
+  width: 100vw;
+  height: 0vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #3597b1;
+  overflow: hidden;
+  transition: 600ms;
+}
+
+input[type=search]{
+    outline: none;
+		height: 20px;
+    width: 70vw;
+    margin-left: 15vw;
+    margin-top: 3vh;
+    border-radius: 10px;
+    border: none;
+}
+
+::-webkit-input-placeholder {
+  color: silver;
+	padding-left: 15px;
+	font-size: 1.4em;
+}
+::-moz-placeholder {
+  color: silver;
+	padding-left: 15px;
+	font-size: 1.4em;
+}
+:-ms-input-placeholder {
+  color: silver;
+	padding-left: 15px;
+	font-size: 1.4em;
+}
+:-moz-placeholder {
+  color: silver;
+	padding-left: 15px;
+	font-size: 1.4em;
+}
+
+input[type=checkbox]{
+  vertical-align: middle;
+  margin: 0px 0 0 5px;
+}
+
+input[type=submit]{
+    display: none;
+}
+
+/*icono tilde*/
+.ion-checkmark-circled{
+  position: absolute;
+  left: 2vw;
+  top: 2.5vh;
+  bottom: 2vh;
+  font-size: 2em;
+}
+
+/*abre el div donde esta el buscador al clickear el icono*/
+#abre-search:checked ~ .div-buscar{
+    height: 65px;
+}
+/*no se muestra el div si no se clickea el icono*/
+#abre-search{
+    display: none;
+}
+
+
+/*no se muestra el div si no se clickea el icono*/
+#abre-options{
+  display: none;
+}
+
+/*abre el div donde esta las opciones al clickear el icono*/
+#abre-options:checked ~ .div-options{
+    height: 155px;
+}
+
+/*icono de agregar*/
+.ion-ios-plus-outline{
+    font-size: 6em;
+    position: absolute;
+    top: 5px;
+    left: 60px;
+    color: white;
+}
+
+/*icono de subir archivos*/
+.ion-android-upload{
+  font-size: 6em;
+  position: absolute;
+  top: 5px;
+  right: 60px;
+  color: white;
+}
+
+/*icono de editar*/
+.ion-edit{
+  font-size: 5em;
+  position: absolute;
+  left: 60px;
+  top: 75px;
+  color: white;
+}
+
+/*icono de carpeta*/
+.ion-android-folder{
+  font-size: 6em;
+  position: absolute;
+  right: 60px;
+  top: 70px;
+  color: white;
+}
+
+
+/*icono menu hamburguesa*/
+.ion-navicon-round{
+  font-size: 2em;
+  position: relative;
+  top: 0.5vh;
+}
+
+/*icono x para cerrar el menu*/
+.cierra{
+    color: white;
+    position: absolute;
+    right: 2vw;
+    top: 2.5vh;
+    font-size: 2em;
+}
+
+/* Fin del nav */
+.tyc{
+  background-color: white;
+  border: solid black 1px;
+}
+.rform{
+  background-color: white;
+  text-align: center;
+}
+
+.proyectos{
+  padding: 20px 0 0 0;
+
+}
+
+.check{
+  margin-right: 2px;
+}
+
+.proyectos article{
+  border: 1px solid #0088eb;
+  box-shadow: 1px 4px 5px #888888;
+  margin: 20px 0;
+  background-color: #ffffff;
+}
+
+.proyectos h2{
+  text-align: center;
+  font-size: 2em;
+}
+
+.proyectos p {
+  font-size: 1.5em;
+  padding: 10px;
+  text-align: justify;
+}
+
+.fer-footer ul{
+  margin-top: 100px;
+  background-color: #0088eb;
+  text-align: center;
+}
+
+/* fer futer */
+
+.fer-footer ul li{
+  color: white;
+  background-color: #0088eb;
+  display: inline-block;
+  font-size: 1.3em;
+  text-align: center;
+  padding: 10px 0 10px 15px;
+}
+
+.fer-footer ul li a{
+  color: white;
+  display: block;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+/*media para tablets*/
+
+@media (min-width: 650px){
+  .main-header{
+    position: relative;
+    background-color: #3597b1;
+    padding-bottom: 22px;
+  }
+
+  .logo{
+    font-size: 1.7em;
+    top: 17px;
+    left: 10px;
+  }
+
+  .toggle-nav{
+      display: block;
+      font-size: 1.5em;
+      background-color: #0088eb;
+      color: white;
+      padding: 9px 0;
+      text-align: center;
+      margin: 0;
+      position: absolute;
+      top: 0vh;
+      right: 0;
+  }
+  .toogle-options{
+      font-size: 3em;
+      right: 80px;
+  }
+  .toogle-search{
+      font-size: 3em;
+        right: 40px;
+  }
+ .div-buscar .cierra{
+      color: white;
+      top: 10px;
+  }
+  #abre-search:checked ~ .div-buscar{
+      height: 115px;
+  }
+  input[type=search]{
+  		height: 30px;
+      width: 70vw;
+      margin-top: 7vh;
+      border-radius: 20px;
+  }
+
+  .ion-ios-plus-outline{
+      font-size: 6em;
+      top: 5px;
+      left: 290px;
+      padding-bottom: 10px;
+  }
+  .ion-android-upload{
+    font-size: 6.5em;
+    top: 0;
+    right: 290px;
+    padding-bottom: 10px;
+  }
+  .ion-edit{
+    font-size: 4.5em;
+    left: 290px;
+    top: 75px;
+    padding-top: 10px;
+  }
+  .ion-android-folder{
+    font-size: 6em;
+    right: 290px;
+    top: 65px;
+    padding-top: 10px;
+  }
+  .proyectos{
+    padding: 30px;
+    padding-bottom: 0px;
+  }
+  .proyectos article{
+    box-shadow: 5px 5px 5px #888888;
+    margin: 30px 0;
+  }
+  .fer-futer ul{
+    padding: 30px 0;
+  }
+
+  .fer-futer ul li{
+    text-align: center;
+    padding: 0 50px;
+  }
+  .fer-futer ul li a{
+    color: white;
+    display: block;
+    font-size: 1.3em;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Header */
+
+
+  .main-header{
+    position: static;
+    background-color: #3597b1;
+    padding-bottom: 0;
+  }
+
+  .main-nav{
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+
+  .main-nav ul{
+    text-align: center;
+  }
+
+  .main-nav li{
+    display: inline-block;
+    margin: 0 10px 10px 10px;
+    font-size: 1.4em;
+  }
+
+  .main-nav ul li a{
+      float: right;
+      font-size: 1.4em;
+      text-transform: uppercase;
+      padding: 5px;
+    }
+
+
+  .active{
+      background-color: #0088eb;
+  }
+
+  .main-nav ul li a:hover{
+    background-color: #0088eb;
+    transition: 2s linear 200ms;
+  }
+
+  .toggle-nav{
+      display: none;
+  }
+
+  /*Input buscar*/
+
+  .toogle-search{
+      display: none;
+  }
+
+
+  /*opciones(foco)*/
+  .toogle-options{
+    display: none;
+  }
+
+header form .buscador{
+  display: block;
+  position: absolute;
+  top: 35px;
+}
+
+  input[type=search]{
+      display: block;
+      position: absolute;
+      top: 12px;
+      right: 6vw;
+      margin: 0;
+      height: 30px;
+      width: 8vw;
+      border-radius: 15px;
+
+  }
+
+  input[type=search]:focus{
+      width: 20vw;
+      border-radius: 15px;
+      transition: 600ms;
+  }
+
+  .enviar{
+    position: absolute;
+    right: 8vw;
+  }
+
+header form .ion-checkmark-circled{
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    margin-left: 15px;
+    top: 0;
+    bottom: 5px;
+    font-size: 3em;
+    color: white;
+  }
+
+
+  .ion-checkmark-circled:hover{
+    color: #e8e7e7;
+    transition: 0.5s linear;
+  }
+
+  ::-webkit-input-placeholder {
+    color: silver;
+    padding-left: 15px;
+    font-size: 1.3em;
+  }
+  ::-moz-placeholder {
+    color: silver;
+    padding-left: 15px;
+    font-size: 1.3em;
+  }
+  :-ms-input-placeholder {
+    color: silver;
+    padding-left: 15px;
+    font-size: 1.3em;
+  }
+  :-moz-placeholder {
+    color: silver;
+    padding-left: 15px;
+    font-size: 1.3em;
+  }
+
+  .cierra{
+      display: none;
+  }
+
+  #abre-search{
+    display: none;
+  }
+
+  #abre-options{
+    display: none;
+  }
+
+  /* Fin del nav */
+
+  .proyectos{
+    padding: 20px 120px;
+
+  }
+
+  .proyectos article{
+    border: 1px solid #0088eb;
+    box-shadow: 1px 4px 5px #888888;
+    margin: 20px 0 40px 10px;
+  }
+
+  .proyectos h2{
+    text-align: center;
+    font-size: 2em;
+  }
+
+  .proyectos p {
+    font-size: 1.6em;
+    padding: 10px;
+  }
+
+  .fer-futer ul{
+    padding: 15px;
+  }
+
+  .fer-futer ul li{
+    font-size: 1.3em;
+    padding: 0 50px;
+  }
+
+  .fer-futer ul li a{
+    font-size: 1.3em;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .fer-futer ul li a:hover{
+    background-color: #3597b1;
+    font-size: 2em;
+    transition: 400ms;
+  }
+}
+/*ACA ARRANCA MI CSS de index */
+.bo-body{
+    margin: 0;
+    font-size: 10px;
+    font-family: 'Raleway', sans-serif;
+    background-color: rgba(#e2e2e2, 0.15)  ;
+}
+.m-header{
+  padding: 1px;
+}
+.barrita{
+  z-index: 3;
+  width: 100vw;
+  background: #507cec;
+   background: -webkit-linear-gradient(left top, #507cec, #00ffa3);
+   background: -o-linear-gradient(bottom right, #507cec, #00ffa3);
+   background: -moz-linear-gradient(bottom right, #507cec, #00ffa3);
+   background: linear-gradient(to bottom right, #507cec, #00ffa3);
+  height: 50px;
+  color: white;
+}
+.m-h1{
+  max-width: 140px;
+  font-size: 3em;
+  position: relative;
+  margin: 35px auto 25px;
+  font-family: 'Audiowide', cursive;
+
+}
+.login{
+  position: static;
+  background-color: #ffffff;
+  padding: 40px;
+  border-style:inset;
+  border-width: thin;
+  margin: 0 5px;
+}
+.anchor{
+  color: black;
+  display: block;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: 2px;
+}
+.recordar span{
+  position: relative;
+  top: 5px;
+  font-size: 1.2em;
+  text-align: center;
+  width: 90vw;
+}
+.in-input , .campos , #btn-login{
+  background-color: rgba(226, 226, 226, 0.15);
+  display: block;
+  margin: 0 auto 15px;
+
+  font-size: 2em;
+  border-radius: 2px;
+}
+
+#recordar{
+  position: relative;
+  top: 4px;
+}
+
+#btn-login{
+  outline: none;
+  color:  rgb(255, 255, 255);
+  top: 380px;
+  background-color: #3597b1;
+  border-radius: 50px;
+  box-shadow: 10px 10px 96px -32px rgb(0, 0, 0);
+  width: 230px;
+  height: 40px;
+  font-weight: bold;
+  margin: 15px auto 40px;
+  margin-bottom: 20px;
+  font-family: 'Comfortaa', cursive;
+}
+.register a {
+  display: inline;
+  width: 50vw;
+  text-align: center;
+}
+.register{
+  text-align: center;
+}
+.recordar{
+  text-align: center;
+  margin-right: 90px;
+}
+.recordar input{
+  display: inline;
+}
+.elemento-li{
+  display: inline-block;
+}
+.elemento-li a{
+  font-weight: bold;
+  color: grey;
+  text-decoration: none;
+  margin: 80px 25px 0;
+}
+.lista-ul{
+  text-align: center;
+}
+.campos{
+  width: 90%;
+  border-radius: 8px;
+  border: solid 1px #ccc;
+  font-size: 1.5em;
+  height: 35px;
+  padding: 0 15px;
+  outline: none;
+}
+.campos:focus{
+  border: 2px solid #507cec;
+}
+@media (min-width: 450px)
+{
+  .campos{
+    max-width: 300px;
+  }
+  #btn-login{
+    margin: 40px auto 50px;
+  }
+  .login{
+    margin: 0px 50px;
+  }
+}
+@media (min-width: 1024px){
+  .login{
+    margin: 0px 200px;
+  }
+  .logo{
+    font-size: 2em;
+    top: 40px;
+    width: 10px;
+  }
+  input[type=search]:focus{
+      width: 15vw;
+      border-radius: 15px;
+      transition: 600ms;
+  }
+}
+/*FAQ*/
+.faq-titulo{
+  font-size: 3em;
+  text-align: center;
+}
+.pregunta{
+  font-size: 1.6em;
+  margin-bottom: 50px;
+  margin-left: 7px;
+}
