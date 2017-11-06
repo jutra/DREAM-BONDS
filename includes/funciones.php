@@ -43,7 +43,7 @@
   			$exten = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
         if ($exten == "jpg" || $exten == "jpeg" || $exten == "png") {
     			$ubicacionDelArchivo = dirname(__FILE__);
-    			$ubicacionDelArchivo = $ubicacionDelArchivo . "../../Foto/";
+    			$ubicacionDelArchivo = $ubicacionDelArchivo . "/Foto/";
     			$ubicacionDelArchivo = $ubicacionDelArchivo . $_POST["correo"] . "." . $exten;
     			move_uploaded_file($carpetaTemporal, $ubicacionDelArchivo);
         }
@@ -53,6 +53,8 @@
   		} else {
         $errores["file"] = "No se pudo subir la foto, intenta de nuevo";
       }
+
+
       return $errores;
   	}
 
@@ -61,15 +63,16 @@
 
     function creaUsuarios($data){
       $user = [
+        "id" => nuevoId(),
         "nombre" => $data["name"],
         "apellido" => $data["lastname"],
         "correo" => $data["correo"],
-        "password" => password_hash($data["pass"],
-        PASSWORD_DEFAULT)];
-        $user["id"] = nuevoId();
+        "password" => password_hash($data["pass"], PASSWORD_DEFAULT)];
 
         return $user;
     }
+
+
 
     // funcion para guardar en json
     function guardarUsario($user){
@@ -105,7 +108,6 @@
     return $id + 1;
     }
 }
-
 
 
 
@@ -167,4 +169,103 @@ function buscarUsuarioPorMail($mail) {
   }
   return false;
 }
+function buscarUsuarioPorId($id) {
+  $todos = traerUsuarios();
+  foreach ($todos as $usuario) {
+    if ($usuario["id"] == $id) {
+      return $usuario["nombre"];
+    }
+  }
+  return false;
+}
+function buscarMailPorId($id) {
+  $todos = traerUsuarios();
+  foreach ($todos as $usuario) {
+    if ($usuario["id"] == $id) {
+      return $usuario["correo"];
+    }
+  }
+  return false;
+}
+function buscarApellidoPorId($id) {
+  $todos = traerUsuarios();
+  foreach ($todos as $usuario) {
+    if ($usuario["id"] == $id) {
+      return $usuario["apellido"];
+    }
+  }
+  return false;
+}
+
+if($_POST){
+   $dsn = 'mysql:host=localhost';
+    $db_user = 'root';
+    $db_pass = '';
+    $opciones = array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION );
+    try {
+      $db = new PDO($dsn, $db_user, $db_pass, $opciones);
+    }catch( PDOException $e ){
+      echo $e->getMessage();
+    }
+
+    // var_dump($db);
+
+    $sql = "CREATE SCHEMA dreambonds";
+    $stmt= $db->prepare($sql);
+    $stmt->execute();
+}
+ if($_POST){
+    $dsn = 'mysql:host=localhost; dbname=dreambonds';
+    $db_user = 'root';
+    $db_pass = '';
+    $opciones = array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION );
+    try {
+    $db2 = new PDO($dsn, $db_user, $db_pass, $opciones);
+    }catch( PDOException $e ){
+      echo $e->getMessage();
+    }
+    $sql2 = "CREATE TABLE `dreambonds`.`usuarios` (
+              `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+              `nombre` VARCHAR(20) NOT NULL,
+              `apellido` VARCHAR(20) NOT NULL,
+              `correo` VARCHAR(50) NOT NULL,
+              `password` VARCHAR(100) NOT NULL,
+              PRIMARY KEY (`id`),
+              UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+              UNIQUE INDEX `correo_UNIQUE` (`correo` ASC));";
+
+    $stmt2 = $db2->prepare($sql2);
+    $stmt2->execute();
+}
+
+  if($_POST){
+  $dsn = 'mysql:host=localhost; dbname=dreambonds';
+$db_user = 'root';
+$db_pass = '';
+$opciones = array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION );
+try {
+$db2 = new PDO($dsn, $db_user, $db_pass, $opciones);
+}catch( PDOException $e ){
+  echo $e->getMessage();
+}
+
+
+$users = traerUsuarios();
+
+
+
+foreach ($users as $key => $value) {
+
+//print_r($value); echo "<br> <br> <br>";
+
+    $sql = "INSERT INTO `dreambonds`.`usuarios` (nombre,apellido,correo,password) VALUES( :nombre,:apellido,:correo,:password)";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(":nombre", $value["nombre"]);
+    $stmt->bindValue(":apellido", $value["apellido"]);
+    $stmt->bindValue(":correo", $value["correo"]);
+    $stmt->bindValue(":password", $value["password"]);
+    $stmt->execute();
+}
+}
+
 ?>

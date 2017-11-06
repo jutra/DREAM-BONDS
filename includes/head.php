@@ -1,5 +1,5 @@
 <head>
-  <?php include_once"includes/funciones.php"; ?>
+  <?php include_once"funciones.php"; ?>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">

@@ -1,9 +1,2 @@
-{"nombre":"Alan","apellido":"Gaia","correo":"alan@hotmail.com","password":"$2y$10$XfvES.fIutlkX9rzZXWxR.P7JQ9\/c7V8N3Bos\/Gie9kaRgYWsA7Dm","id":1}
-{"nombre":"Juan","apellido":"Traverso","correo":"Traversito@jutra.com","password":"$2y$10$iP1zuHtWH4sS2jRtBeGy..QBZpYae1AkL0lmdmu\/rbvMif2Q7ln1e","id":2}
-{"nombre":"kolo","apellido":"kolorado","correo":"kolo@kolo.com","password":"$2y$10$ZoPlTAoamGBsmCzFJ7bpze4KSem5rsppmKfiOs4t3E.XNI3bXTJaW","id":3}
-{"nombre":"juan","apellido":"traverso","correo":"jutra@live.com","password":"$2y$10$ld3X7rGDCEbPxQAkp6fFmex3vu3TwIV1vHgZrtqfLTIgdU2StfxOW","id":4}
-{"nombre":"asd","apellido":"asd","correo":"asd@asd.asd","password":"$2y$10$LJuvMoLLQGVlHFIYp7ZsieJY5yUNjGTKSTG1z02BtgkhjqVrwCa9a","id":5}
-{"nombre":"asd","apellido":"asd","correo":"asd@asd.asd","password":"$2y$10$kPJS2PgL64IDL.Dt60QeOuMr7bjUt3D3cqBpPIJLg9Lc5OF6l6jjm","id":6}
-{"nombre":"Fernando","apellido":"Deibe","correo":"fernandodeibe@gmail.com","password":"$2y$10$0uCqWwbmOzLS5VsjL3JMqODyP46AMLFvojSpkoJsDmFhj\/1RF.xX6","id":7}
-{"nombre":"Fernando","apellido":"Deibe","correo":"fernandodeibe@gmail.com","password":"$2y$10$awM0i6bKLmRnUHduEN02j.YoAW0z6T860IY2aUQI2b4VEfLI.DbYm","id":8}
-{"nombre":"Fernando","apellido":"Urza","correo":"fernandoariel@gmail.com","password":"$2y$10$GbXLwF6LYu1p60wRua8BPu49UNgIgwNztzs5.LukJW3X2NUVCGg82","id":9}
+{"id":1,"nombre":"Fer","apellido":"deibe","correo":"fer@gmail.com","password":"$2y$10$wXxVZeITO6QMaGeSvyVPbuEpqnWfSZMz3Se7WY1NPvekQO4j9vg.q"}
+{"id":2,"nombre":"kolo","apellido":"deibe","correo":"kolodeibe@gmail.com","password":"$2y$10$qGBtdh5QiAU7zpfCurv3Cue5rY6Ej9Ex2gW6bB54Fp8ltd2CIi8H6"}

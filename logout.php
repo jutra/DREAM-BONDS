@@ -7,9 +7,9 @@
   <body>
       <div class="container-logout">
         <h2>Has Cerrado Sesion Correctamente</h2>
-          <h3>Nos vemos Pronto</h3>
+          <h3>Nos vemos pronto</h3>
           <div class="logo-logout">
-            <h1><a href="#">Dream</a><span>Bonds</span></h1>
+            <h1><a href="index.php">Dream</a><span>Bonds</span></h1>
           </div>
       </div>
       <div class="footer-absolute">

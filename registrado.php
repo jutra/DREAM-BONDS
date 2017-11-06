@@ -6,7 +6,6 @@
     <div class="temp-container">
       <h1>Felicidades te has registrado con Exito</h1>
       <h3>Vuelve al <a href="index.php">home</a> e inicia sesion</h3>
-
     </div>
   </body>
 </html>

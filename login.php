@@ -30,7 +30,7 @@ if ($_POST) {
 
                     <?php include_once"includes/header.php"; ?>
                   <form class="login" action="login.php" method="post">
-                    <input type="text" name="correo" placeholder="correo" class="campos">
+                    <input type="text" name="correo" placeholder="Email" class="campos">
                     <input type="password" name="pass"  placeholder="Contraseña"value="" class="campos">
                     <div class="recordar">
                       <input class="in-input"type="checkbox" name="recordarme"  id="recordar" value="">

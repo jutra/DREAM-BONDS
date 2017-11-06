@@ -31,22 +31,24 @@ session_start();
 if($_POST){
     if(count($errores) == 0){
     $errores = SubirImagen("file", $errores);
+    if(count($errores) == 0){
     $usuario = creaUsuarios($_POST);
     guardarUsario($usuario);
     if(count($errores) == 0){
     header("location:registrado.php");exit;
+      }
     }
   }
 }
 
 // Muestra de errores
 
- if(isset($errores["name"])){echo $errores["name"];}
- if(isset($errores["lastname"])){echo $errores["lastname"];}
- if(isset($errores["correo"])){echo $errores["correo"];}
- if(isset($errores["pass"])){echo $errores["pass"];}
- if(isset($errores["repass"])){echo $errores["repass"];}
- if(isset($errores["file"])){echo $errores["file"];}
+ // if(isset($errores["name"])){echo $errores["name"];}
+ // if(isset($errores["lastname"])){echo $errores["lastname"];}
+ // if(isset($errores["correo"])){echo $errores["correo"];}
+ // if(isset($errores["pass"])){echo $errores["pass"];}
+ // if(isset($errores["repass"])){echo $errores["repass"];}
+ // if(isset($errores["file"])){echo $errores["file"];}
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,6 +59,15 @@ if($_POST){
       <h2>Registrate ya!</h2>
 
 		<form class="reg" action="registro.php" method="post" enctype="multipart/form-data" novalidate>
+        <?php if (isset($errores)): ?>
+              <div class="errores-div">
+                  <ul>
+                    <?php foreach ($errores as $mostra): ?>
+                        <li><?=$mostra; ?></li>
+                    <?php endforeach; ?>
+                  </ul>
+              </div>
+            <?php endif; ?>
 
         <input type="text" name="name" value="<?=$nombre?>" placeholder="Nombre">
         <input type="text" name="lastname" value="<?=$apellido?>" placeholder="Apellido">
@@ -69,8 +80,9 @@ if($_POST){
             <span>Al registrarse aceptas todos los <a href="#acepto">términos y condiciones</a></span>
         </div>
 
-        <input type="submit" name="enviar" value="Registrarse">
+        <input type="submit" name="enviar" value="Registrarse" id="subir">
 		</form>
+    </div>
     <?php include_once"includes/footer.php"?>
 </div>
   </body>

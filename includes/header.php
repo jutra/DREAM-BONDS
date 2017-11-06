@@ -15,8 +15,13 @@
           <li><a href="index.php">Home</a></li>
           <li><a href="proyectos.php">Proyectos</a></li>
           <li><a href="faq.php">FAQ</a></li>
+					<?php if (!estaLogueado()) {?>
           <li><a href="login.php">Iniciar sesion</a></li>
           <li><a href="registro.php">Registrarse</a></li>
+					<?php } else { ?>
+					<li><a href="perfil.php">Mi Perfil</a></li>
+					<li><a href="logout.php">Cerrar Sesion</a></li>
+					<?php } ?>
         </ul>
         </nav>
 				<nav class="secondary-nav">
