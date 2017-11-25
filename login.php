@@ -3,17 +3,18 @@
 <!DOCTYPE html>
 <html>
   <?php
-  require_once"includes/head.php";
+  require_once("includes/head.php");
+   include_once("soporte.php");
 //Verifica si el usuarios esta logueado y de ser asi lo redirige al index
-if(estaLogueado()) {
+if($log->estaLogueado()) {
     header("location:index.php");exit;
   }
+
 if ($_POST) {
-    $errores = validarLogin($_POST);
+    $errores = $val->validarLogin();
     if(empty($errores)) {
-      $usuario = buscarPorMail($_POST["correo"]);
-      print_r($usuario);
-      loguear($usuario);
+
+      $log->loguear($usuario);
       if (isset($_POST["recordame"])) {
               setcookie("idUser", $usuario["id"], time() + 60 * 60 * 24 * 30);
             }

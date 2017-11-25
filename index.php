@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<?php include_once"includes/head.php";
-session_start();
+	      include_once"soporte.php";
+
 	?>
 	<body>
 		<div class="container-index">

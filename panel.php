@@ -1,5 +1,19 @@
-<?php 
+<?php
 	include_once("funciones.php");
+
+if ($_POST){
+
+if (isset($_POST["base"])) {
+	crearBase();
+}
+if (isset($_POST['tablas'])) {
+	crearTabla();
+}
+if (isset($_POST['migrar'])) {
+	migrarDatos();
+}
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

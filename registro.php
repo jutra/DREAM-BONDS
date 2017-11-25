@@ -1,10 +1,10 @@
 <?php
 session_start();
   require_once"includes/head.php";
-
+  include_once("soporte.php");
 
   //Verifica si el usuarios esta logueado y de ser asi lo redirige al index
-  if(estaLogueado()) {
+  if($val->estaLogueado()) {
       header("location:index.php");exit;
     }
 
@@ -17,23 +17,23 @@ session_start();
 
 // verifico si existe post para ver que no tire errores
   if($_POST){
-    $errores = validacion($_POST);
+    $errores = $val->validarInfo($_POST);
     if(!isset($errores["name"])){
-      $nombre = $_POST["name"];
+      $bd->= $_POST["name"];
     }
     if(!isset($errores["lastname"])){
-      $apellido = $_POST["lastname"];
+      $bd->= $_POST["lastname"];
     }
     if(!isset($errores["correo"])){
-      $mail = $_POST["correo"];
+      $bd-> = $_POST["correo"];
     }
   }
 if($_POST){
     if(count($errores) == 0){
     $errores = SubirImagen("file", $errores);
     if(count($errores) == 0){
-    $usuario = creaUsuarios($_POST);
-    guardarUsario($usuario);
+    $usuario = $bs->creaUsuarios();
+    $bd->guardarUsario();
     if(count($errores) == 0){
     header("location:registrado.php");exit;
       }

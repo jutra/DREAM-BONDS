@@ -1,13 +1,14 @@
 <?php
   session_start();
 require_once("funciones.php");
-$apellido=buscarApellidoPorId($_SESSION["idUser"]);
-$correo=buscarMailPorId($_SESSION["idUser"]);
-$nombre=buscarUsuarioPorId($_SESSION["idUser"]);
-$foto=buscarMailPorId($_SESSION["idUser"]);
+include_once("soporte.php");
+$apellido=$user->apellido;
+$correo=$user->correo;
+$nombre=$user->nombre;
+$foto=buscarMailPorI($_SESSION["idUser"]);
 $archivos = glob("Foto/" . $foto . ".*");
 $foto = $archivos[0];
-$usuario = buscarPorId($_SESSION["idUser"]);
+$usuario = $user->id);
 
 ?>
 <!DOCTYPE html>

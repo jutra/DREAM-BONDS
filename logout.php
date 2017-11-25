@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <?php
-  session_start();
+   include_once("soporte.php");
   require_once("./includes/head.php");
    ?>
   <body>
